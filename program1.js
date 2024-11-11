@@ -2,7 +2,7 @@ const getTotalIsles = function (grid) {
   // write your code here
   const rows = grid.length;
   const cols = grid[0].length;
-  let count = 0;
+  let distinct_island = 0;
 
   const visited = new Array(rows)
     .fill(false)
@@ -30,7 +30,7 @@ const getTotalIsles = function (grid) {
   for (let i = 0; i < rows; i++) {
     for (let j = 0; j < cols; j++) {
       if (grid[i][j] === "L" && !visited[i][j]) {
-        count++;
+        distinct_island++;
         DFS(i, j);
       }
     }
