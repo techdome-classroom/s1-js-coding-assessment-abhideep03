@@ -3,15 +3,12 @@ const decodeTheRing = function (s, p) {
   const m = message.length;
   const n = key.length;
 
-  // Create a 2D DP table to store results
   const dp = new Array(m + 1)
     .fill(false)
     .map(() => new Array(n + 1).fill(false));
 
-  // Empty string matches empty key
   dp[0][0] = true;
 
-  // Handle cases where key starts with '*'
   for (let i = 1; i <= n; i++) {
     if (key[i - 1] === "*") {
       dp[0][i] = dp[0][i - 1];
