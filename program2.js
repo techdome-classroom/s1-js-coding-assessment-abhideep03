@@ -1,6 +1,6 @@
 const decodeTheRing = function (s, p) {
   // write your code here
-  const m = message.length;
+  const m = s.length;
   const n = key.length;
 
   const dp = new Array(m + 1)
@@ -22,7 +22,7 @@ const decodeTheRing = function (s, p) {
       } else if (key[j - 1] === "*") {
         dp[i][j] = dp[i - 1][j] || dp[i][j - 1] || dp[i - 1][j - 1];
       } else {
-        dp[i][j] = dp[i - 1][j - 1] && message[i - 1] === key[j - 1];
+        dp[i][j] = dp[i - 1][j - 1] && s[i - 1] === key[j - 1];
       }
     }
   }
