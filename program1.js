@@ -8,7 +8,7 @@ const getTotalIsles = function (grid) {
     .fill(false)
     .map(() => new Array(cols).fill(false));
 
-  const dfs = (i, j) => {
+  const DFS = (i, j) => {
     if (
       i < 0 ||
       i >= rows ||
@@ -21,17 +21,17 @@ const getTotalIsles = function (grid) {
     }
 
     visited[i][j] = true;
-    dfs(i + 1, j);
-    dfs(i - 1, j);
-    dfs(i, j + 1);
-    dfs(i, j - 1);
+    DFS(i + 1, j);
+    DFS(i - 1, j);
+    DFS(i, j + 1);
+    DFS(i, j - 1);
   };
 
   for (let i = 0; i < rows; i++) {
     for (let j = 0; j < cols; j++) {
       if (grid[i][j] === "L" && !visited[i][j]) {
         count++;
-        dfs(i, j);
+        DFS(i, j);
       }
     }
   }
