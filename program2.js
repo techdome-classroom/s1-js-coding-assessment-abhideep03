@@ -1,13 +1,6 @@
 const decodeTheRing = function (s, p) {
 
     // write your code here
-
-  };
-  
-  module.exports = decodeTheRing;
-
-
-  function isMatch(message, key) {
     const m = message.length;
     const n = key.length;
   
@@ -37,4 +30,12 @@ const decodeTheRing = function (s, p) {
     }
   
     return dp[m][n];
+
+  };
+  
+  module.exports = decodeTheRing;
+
+
+  function isMatch(message, key) {
+
   }
