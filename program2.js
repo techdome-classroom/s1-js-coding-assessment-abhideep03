@@ -38,9 +38,3 @@ const decodeTheRing = function (s, p) {
   
     return dp[m][n];
   }
-  
-  // Example usage:
-  const message = "aa";
-  const key = "*";
-  const result = isMatch(message, key);
-  console.log(result); // Output: true
